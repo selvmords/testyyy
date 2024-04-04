@@ -1,0 +1,22 @@
+Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+Run pyenv --version to check if the installation was successful.
+
+Run pyenv install -l to check a list of Python versions supported by pyenv-win
+
+Run pyenv install <version> to install the supported version
+
+Run pyenv global <version> to set a Python version as the global version
+
+
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.11 -y
+python3.11 --version
+
+sudo apt install python3.10 -y
+python3.10 --version
+
+sudo apt install python3.9 -y
+python3.9 --version
