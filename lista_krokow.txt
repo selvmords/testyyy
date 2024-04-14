@@ -1,10 +1,10 @@
 1. Zalozenie katalogu z projektem (np.ai-django)
 2. Zalozenie repozytorium zdalnego o dostepie publicznym (public)
-3. Otworzenie terminala w lokalizacji ai-django (czli w terminalu np: C:/ai-django)
+3. Otworzenie terminala w lokalizacji ai-django (czyli w terminalu np: C:/ai-django)
 4. Wykonanie polecenia 'git init'
 5. Skopiowanie z repozytorium polecenia dodawania repozytorium zdalnego do projektu (ssh)
     np. git remote add origin git@git......git
-6. Wygenerowanie kluczy ssh 'ssh-keygen' [klikamy enter do pojawienia sie konsoli]
+6. Wygenerowanie kluczy ssh 'ssh-keygen' [klikamy enter do pojawienia sie ponownie lokalizacji C:/ai-django]
 7. Lokalizacja klucza
 dla Windows C:\Users\nazwa_uzytkownika\.ssh
 dla Unix home/nazwa_uzytkownika/.ssh
