@@ -1,0 +1,56 @@
+1. Zalozenie katalogu z projektem (np.ai-django)
+2. Zalozenie repozytorium zdalnego o dostepie publicznym (public)
+3. Otworzenie terminala w lokalizacji ai-django (czli w terminalu np: C:/ai-django)
+4. Wykonanie polecenia 'git init'
+5. Skopiowanie z repozytorium polecenia dodawania repozytorium zdalnego do projektu (ssh)
+    np. git remote add origin git@git......git
+6. Wygenerowanie kluczy ssh 'ssh-keygen' [klikamy enter do pojawienia sie konsoli]
+7. Lokalizacja klucza
+dla Windows C:\Users\nazwa_uzytkownika\.ssh
+dla Unix home/nazwa_uzytkownika/.ssh
+8. Otworzenie w programie typu notatnik pliku klucza z .pub (np id_rsa.pub)
+9. Kopiujecie zawartosc
+10. Dodanie do repozytorium
+ - przegladarka
+ - konto github
+    - prawy gorny rog (ikona uzytkownika)
+    - settings
+    - ssh and gpg keys
+    - new ssh key
+    - do sekcji 'key' wklejacie zawartosc id_rsa.pub
+    - zapisz
+ 11.  wewnątrz C:/ai-django
+ 12.  Tworzymy plik .gitignore
+ 13.  w pliku .gitignore dodajemy wpis .venv oraz .env
+ 14. stawiamy projekt
+ 15. sprawdzamy wersje pythona ma byc 3.10.* poleceniem python --version lub pod unixem python3 --version
+ 16. Tworzymy wirtualną zmienną środowiskową poleceniem python -m venv .venv lub pod unixem python3 -m venv .venv
+ 17. Aktywacja VENV polecenie
+ .venv/Scripts/activate  (powershell lub domyslny windowsowy terminal, cmder)
+ lub
+ source .venv/Scripts/activate (gitbash)
+ lub
+ .venv\Scripts\activate (inne dziadostwo)
+
+ pod unixem jest jedno polecenie source .venv/bin/activate
+18. weryfikacja - w terminalu powinno byc cos w tym stylu (.venv)C:/ai-django
+19. w C:/ai-django tworzymy plik requirements.txt
+20. wewnątrz pliku umieszczamy zaleznosci
+Django==4.0
+Pillow
+numpy
+pandas
+tensorflow==2.8.0
+tensorflow-hub
+protobuf==3.20
+jupyter
+openai==0.28
+python-dotenv
+
+21. W terminalu wykonujemy polecenie pip install -r requirements.txt
+22. Uruchomienie projektu python manage.py runserver lub python3 manage.py runserver
+23. git branch -M main
+24. git add .
+25. git add -A
+26. git commit -m "dodanie projektu do repo"
+27. git push origin main
