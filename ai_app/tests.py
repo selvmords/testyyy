@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from ai_app.models import Book
 from ai_app.models import Music
+from ai_app.models import Filmy
 # Zastąp 'ai_app' nazwą Twojej aplikacji
 from datetime import datetime, timedelta
 
@@ -91,3 +92,28 @@ class MusicTest(TestCase):
         popular_music = Music.objects.get(title="Test Music")
         self.assertTrue(popular_music.is_popular())
 
+class FilmyTest(TestCase):
+    def setUp(self):
+        Filmy.objects.create(title="Invisible Invaders",
+                             genre="Horror",
+                             premiere=datetime.now().date() - timedelta(days=23742),
+                             review=5)
+
+        Filmy.objects.create(title="Godzilla x Kong: The New Empire",
+                             genre="Action",
+                             premiere=datetime.now().date() - timedelta(days=121),
+                             review=12)
+
+    def test_is_review_correct(self):
+        test_review = Filmy.objects.get(review=5)
+        self.assertFalse(test_review.is_review_correct())
+
+        test_review2 = Filmy.objects.get(genre="Action")
+        self.assertTrue(test_review2.is_review_correct())
+
+    def test_is_oldchool(self):
+        oldschool = Filmy.objects.get(title="Invisible Invaders")
+        self.assertFalse(oldschool.is_oldschool())
+
+        not_oldschool = Filmy.objects.get(title="Godzilla x Kong: The New Empire",)
+        self.assertTrue(not_oldschool.is_oldschool())
